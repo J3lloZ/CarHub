@@ -1,12 +1,14 @@
 public class Listing implements listingInter{
 
     private String listTitle;
-    private String sellerName;
+    private Seller seller;
+    private Vehicle vehicle;
     private String description;
 
-    public Listing(String title, String name, String description){
+    public Listing(String title, Seller seller,Vehicle vehicle, String description){
         this.listTitle = title;
-        this.sellerName = name;
+        this.seller = seller;
+        this.vehicle = vehicle;
         this.description = description;
     }
 
@@ -18,12 +20,12 @@ public class Listing implements listingInter{
         this.listTitle = listTitle;
     }
 
-    public String getSellerName() {
-        return sellerName;
+    public Seller getSeller() {
+        return seller;
     }
 
-    public void setSellerName(String sellerName) {
-        this.sellerName = sellerName;
+    public void setSeller(Seller seller) {
+        this.seller = seller;
     }
 
     public String getDescription() {
@@ -34,11 +36,20 @@ public class Listing implements listingInter{
         this.description = description;
     }
 
+    public Vehicle getVehicle() {
+        return vehicle;
+    }
+
+    public void setVehicle(Vehicle vehicle) {
+        this.vehicle = vehicle;
+    }
+
     @Override
     public String toString() {
         return "Listing{" +
                 "listTitle='" + listTitle + '\'' +
-                ", sellerName='" + sellerName + '\'' +
+                ", seller=" + seller +
+                ", vehicle=" + vehicle +
                 ", description='" + description + '\'' +
                 '}';
     }
