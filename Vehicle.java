@@ -1,4 +1,11 @@
+package com.abc.main
+
+public enum DriveTrain {
+    TWO_WD, FOUR_WD, ALL_WD
+    // Add other drive train types if needed
+}
 public class Vehicle {
+    private DriveTrain vehicleDriveTrain;
     private String vehicleMake;
     private String vehicleModel;
     private int vehicleYear;
@@ -14,6 +21,10 @@ public class Vehicle {
         this.vehicleDriveTrain = driveTrain;
     }
 
+
+    public DriveTrain getVehicleDriveTrain(){
+        return vehicleDriveTrain;
+    }
     public int getVehicleMiles() {
         return vehicleMiles;
     }
@@ -26,9 +37,12 @@ public class Vehicle {
         return vehicleDriveTrain;
     }
 
-    public void setVehicleDriveTrain(int vehicleDriveTrain) {
+    public void setVehicleDriveTrain(DriveTrain vehicleDriveTrain) {
         this.vehicleDriveTrain = vehicleDriveTrain;
-    }
+
+//    public void setVehicleDriveTrain(int vehicleDriveTrain) {
+//        this.vehicleDriveTrain = vehicleDriveTrain;
+//    }
 
     public String getVehicleMake() {
         return vehicleMake;
