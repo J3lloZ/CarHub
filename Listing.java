@@ -1,3 +1,8 @@
+package com.abc.main
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Listing implements listingInter{
 
     private String listTitle;
@@ -54,23 +59,50 @@ public class Listing implements listingInter{
                 '}';
     }
 
-    @Override
-    public void addListing() {
-        //NEED TO IMPLEMENT
+//    @Override
+//    public void addListing() {
+//        //NEED TO IMPLEMENT
+//    }
+//
+//    @Override
+//    public void deleteListing() {
+//        //NEED TO IMPLEMENT
+//    }
+//
+//    @Override
+//    public void editListing() {
+//        //NEED TO IMPLEMENT
+//    }
+//
+//    @Override
+//    public void updateListingStatus() {
+//        //NEED TO IMPLEMENT
+    }
+}
+
+public class ListingService {
+
+    private List<Listing> listings = new ArrayList<>();
+
+    public void addListing(Listing listing) {
+        listings.add(listing);
     }
 
-    @Override
-    public void deleteListing() {
-        //NEED TO IMPLEMENT
+    public void deleteListing(Listing listing) {
+        listings.remove(listing);
     }
 
-    @Override
-    public void editListing() {
-        //NEED TO IMPLEMENT
+    public void editListing(Listing oldListing, Listing updatedListing) {
+        int index = listings.indexOf(oldListing);
+        if(index != -1) {
+            listings.set(index, updatedListing);
+        }
     }
 
-    @Override
-    public void updateListingStatus() {
-        //NEED TO IMPLEMENT
+    public void updateListingStatus(Listing listing, String newStatus) {
+        int index = listings.indexOf(listing);
+        if(index != -1) {
+            listing.setDescription(newStatus);
+        }
     }
 }
